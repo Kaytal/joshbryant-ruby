@@ -2,13 +2,19 @@
 <html>
 <head>
   <title>Josh Bryant | Web Developer | <%= yield(:title) %></title>
+  <%= google_webfonts_link_tag :julius_sans_one			=> [400],
+  														 :crimson_text			=> [400, 600, 700] %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<%= render "shared/header" %>
+
 <%= yield %>
+
+<%= render "shared/footer" %>
 
 </body>
 </html>

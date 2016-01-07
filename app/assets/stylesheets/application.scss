@@ -11,5 +11,24 @@
  * file per style scope.
  *
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body{
+	font-family: "Crimson Text", serif;
+	font-size: 16px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Julius Sans One", sans-serif;
+	text-transform: uppercase;
+}
+
+.main-header{
+	background-image: url(http://lorempixel.com/1920/1080);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	width: 100%;
+	height: 250px;
+}
