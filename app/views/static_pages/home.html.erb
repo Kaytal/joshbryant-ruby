@@ -3,9 +3,27 @@
 	<header>
 		<h2 class="text-center">Josh Bryant<br /><small>Greater Memphis Area, TN, MS, AR</small></h2>
 	</header>
-	<section>
+	<section class="row">
 		<div class="col-sm-6 col-sm-offset-3">
 			<p class="text-center">I am a web developer who dabbles in Rails.  I love being outside and crafting things with wood.  I am married to my best friend and I could not be happier.</p>
 		</div>
+	</section>
+	<section class="social row">
+		<h2>Social</h2>
+		<div class="instagram col-sm-12">
+			<h3>Instagram</h3>
+			<% @instagram.each do |instagram| %>
+				<div class="col-md-3 col-sm-6 col-xs-6">
+					<a href="<%= instagram.link %>" target="_blank">
+						<%= image_tag instagram.images.standard_resolution.url, :class => "img-responsive" %>
+					</a>
+				</div>
+			<% end %>
+		</div>
+		<div class="col-sm-6 twitter">
+			<h3>Twitter</h3>
+			<a class="twitter-timeline" href="https://twitter.com/Kaytal1" data-widget-id="664172417674289153">Tweets by @Kaytal1</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			</div>
 	</section>
 </main>
