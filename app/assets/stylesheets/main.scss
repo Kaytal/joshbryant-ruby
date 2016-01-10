@@ -8,12 +8,21 @@ h1, h2, h3, h4, h5, h6, nav ul li {
 }
 
 .main-header{
-	background-image: url(http://lorempixel.com/1920/1080);
+	background-image: image-url(header_bkg);
 	background-size: cover;
-	background-position: center;
+	background-position: center top;
 	background-attachment: fixed;
 	width: 100%;
-	height: 250px;
+	height: 350px;
+	.avatar{
+		width: 200px;
+		-webkit-transform: translateX(-50%);
+		-moz-transform: translateX(-50%);
+		-o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    margin-left: 50%;
+    padding-top: 75px;
+	}
 }
 nav{
 	ul{
@@ -24,4 +33,8 @@ nav{
 			padding: 25px;
 		}
 	}
+}
+.insta-indiv{
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
