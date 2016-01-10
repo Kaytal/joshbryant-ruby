@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Josh Bryant | Web Developer | <%= yield(:title) %></title>
+  <title><%= full_title(yield(:title)) %></title>
   <%= google_webfonts_link_tag :julius_sans_one			=> [400],
   														 :crimson_text			=> [400, 600, 700] %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
