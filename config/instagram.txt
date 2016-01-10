@@ -1,0 +1,10 @@
+code=c49a6616670847acbd933addbab9e339
+
+curl -F 'client_id=249ceae1bebb4fd8b091194ad0c77a1e' \
+-F 'client_secret=35882b08fc084c42a69619a7f1a61e5e' \
+-F 'grant_type=authorization_code' \
+-F 'redirect_uri=http://joshbryant.me' \
+-F 'code=c49a6616670847acbd933addbab9e339' \
+https://api.instagram.com/oauth/access_token
+
+Access Token: 219769686.249ceae.137e29b3e91a43778ec3e47ffd6fb67a
