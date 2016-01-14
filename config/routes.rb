@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   get 'signup' => 'users#new'
 
+  get 'blog' => 'static_pages#contact'
+
+  get 'portfolio' => 'static_pages#contact'
+
   
   #get 'static_pages/home'
 

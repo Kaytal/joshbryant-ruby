@@ -1,38 +1,36 @@
-<main class="container">
-	<header>
-		<h2 class="text-center">Josh Bryant<br /><small>Greater Memphis Area, TN, MS, AR</small></h2>
-	</header>
-	<section class="row">
-		<div class="col-sm-6 col-sm-offset-3">
-			<p class="text-center">I am a web developer who dabbles in Rails.  I love being outside and crafting things with wood.  I am married to my best friend and I could not be happier.</p>
-		</div>
-	</section>
-	<%= render "shared/mainnav" %>
-	<section class="social row">
-		<h2>Social</h2>
-		<div class="instagram col-sm-12">
-			<h3>Instagram</h3>
-			<% @instagram.each do |instagram| %>
-				<div class="col-md-3 col-sm-6 col-xs-6 insta-indiv">
-					<a href="<%= instagram.link %>" target="_blank">
-						<%= image_tag instagram.images.standard_resolution.url, :class => "img-responsive" %>
-					</a>
-				</div>
-			<% end %>
-		</div>
-		<div class="twitter col-sm-12">
-			<h3>Twitter</h3>
-			<% @tweets.each do |t| %>
-			<article class="tweet well">
-				<div class="col-xs-2">
-						<%= image_tag(t.user.profile_image_url, class: "img-responsive twitter-prof-img", alt: t.user.screen_name) %>
-				</div>
-				<div class="col-xs-10">
-					<h1><%= t.user.name %> <small><%=  link_to "@#{t.user.screen_name}", "#{t.user.url}" %></small></h1>
-					<p>"<%= twitter_text(t.text) %>"</p>
-				</div>
-			</article>
-			<% end %>
-		</div>
-	</section>
-</main>
+<header>
+	<h2 class="text-center">Josh Bryant<br /><small>Greater Memphis Area, TN, MS, AR</small></h2>
+</header>
+<section class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		<p class="text-center">I am a web developer who dabbles in Rails.  I love being outside and crafting things with wood.  I am married to my best friend and I could not be happier.</p>
+	</div>
+</section>
+<%= render "shared/mainnav" %>
+<section class="social row">
+	<h2>Social</h2>
+	<div class="instagram col-sm-12">
+		<h3>Instagram</h3>
+		<% @instagram.each do |instagram| %>
+			<div class="col-md-3 col-sm-6 col-xs-6 insta-indiv">
+				<a href="<%= instagram.link %>" target="_blank">
+					<%= image_tag instagram.images.standard_resolution.url, :class => "img-responsive" %>
+				</a>
+			</div>
+		<% end %>
+	</div>
+	<div class="twitter col-sm-12">
+		<h3>Twitter</h3>
+		<% @tweets.each do |t| %>
+		<article class="tweet well">
+			<div class="col-xs-2">
+					<%= image_tag(t.user.profile_image_url, class: "img-responsive twitter-prof-img", alt: t.user.screen_name) %>
+			</div>
+			<div class="col-xs-10">
+				<h1><%= t.user.name %> <small><%=  link_to "@#{t.user.screen_name}", "#{t.user.url}" %></small></h1>
+				<p>"<%= twitter_text(t.text) %>"</p>
+			</div>
+		</article>
+		<% end %>
+	</div>
+</section>
