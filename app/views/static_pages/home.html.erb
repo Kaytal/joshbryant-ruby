@@ -20,10 +20,19 @@
 				</div>
 			<% end %>
 		</div>
-		<div class="col-sm-offset-3 col-sm-6 col-xs-10 col-xs-offset-1 twitter">
+		<div class="twitter col-sm-12">
 			<h3>Twitter</h3>
-			<a class="twitter-timeline" href="https://twitter.com/Kaytal1" data-widget-id="664172417674289153">Tweets by @Kaytal1</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-			</div>
+			<% @tweets.each do |t| %>
+			<article class="tweet well">
+				<div class="col-xs-2">
+						<%= image_tag(t.user.profile_image_url, class: "img-responsive twitter-prof-img", alt: t.user.screen_name) %>
+				</div>
+				<div class="col-xs-10">
+					<h1><%= t.user.name %> <small><%=  link_to "@#{t.user.screen_name}", "#{t.user.url}" %></small></h1>
+					<p>"<%= twitter_text(t.text) %>"</p>
+				</div>
+			</article>
+			<% end %>
+		</div>
 	</section>
 </main>

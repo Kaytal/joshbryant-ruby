@@ -6,6 +6,13 @@ h1, h2, h3, h4, h5, h6, nav ul li {
 	font-family: "Julius Sans One", sans-serif;
 	text-transform: uppercase;
 }
+a {
+	color: #77A84F;
+}
+a:hover {
+	color: #598B2F;
+	text-decoration: none;
+}
 
 .main-header{
 	background-image: image-url(header_bkg);
@@ -37,4 +44,24 @@ nav{
 .insta-indiv{
 	padding-top: 15px;
 	padding-bottom: 15px;
+}
+.tweet{
+	&.well{
+		display: flex;
+		border-radius: 0;
+		border: 0;
+	}
+	h1{
+		font-size: 18px;
+	}
+	.twitter-prof-img{
+		transform: translateX(-50%);
+		margin-left: 50%;
+		margin-top: 20px;
+	}
+}
+footer {
+	background-color: #77A84F;
+	padding-top: 25px;
+	padding-bottom: 25px;
 }
