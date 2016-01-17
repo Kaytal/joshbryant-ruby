@@ -42,6 +42,7 @@ GEM
     autoprefixer-rails (6.2.3)
       execjs
       json
+    bcrypt (3.1.10)
     binding_of_caller (0.7.3.pre1)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.6)
@@ -248,6 +249,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (= 3.1.10)
   bootstrap-sass (~> 3.3.6)
   byebug (= 3.4.0)
   coffee-rails (= 4.1.0)
