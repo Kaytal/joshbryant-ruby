@@ -7,7 +7,7 @@ body{
 	font-family: "Crimson Text", serif;
 	font-size: 16px;
 }
-h1, h2, h3, h4, h5, h6, nav ul li {
+h1, h2, h3, h4, h5, h6, nav ul li, .btn, .alert {
 	font-family: "Julius Sans One", sans-serif;
 	text-transform: uppercase;
 }
@@ -68,6 +68,42 @@ nav{
 		margin-top: 20px;
 	}
 }
+
+.form-control {
+	margin-bottom: 10px;
+	border-radius: 0;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+.btn {
+	border-radius: 0;
+	margin-top: 25px;
+	&.btn-primary {
+		background-color: #77A84F;
+		border: 0;
+		&:hover {
+			background-color: #598B2F;
+		}
+	}
+}
+.alert {
+	border-radius: 0;
+	border: 0;
+}
+
 footer {
 	background-color: #77A84F;
 	padding-top: 25px;
