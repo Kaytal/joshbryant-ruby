@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
 
   #Home Screen
-  root 'static_pages#home'
+  root  'static_pages#home'
 
   #Static Pages
-  get 'contact' => 'static_pages#contact'
-  get 'blog' => 'static_pages#contact'
-  get 'portfolio' => 'static_pages#contact'
+  get   'contact'     => 'static_pages#contact'
+  get   'blog'        => 'static_pages#contact'
+  get   'portfolio'   => 'static_pages#contact'
 
-  get 'signup' => 'users#new'
+  get   'signup'  => 'users#new'
+  get   'login'   => 'sessions#new'
+  post  'login'   => 'sessions#create'
+  get   'logout'  => 'sessions#destroy'
 
   #Users Resource
   resources :users

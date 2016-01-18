@@ -24,11 +24,20 @@
 		<% @tweets.each do |t| %>
 		<article class="tweet well">
 			<div class="col-xs-2">
+				<% if t.retweeted_status? %>
+					<%= image_tag(t.retweeted_status.user.profile_image_url, class: "img-responsive twitter-prof-img", alt: t.retweeted_status.user.screen_name) %>
+				<% else %>
 					<%= image_tag(t.user.profile_image_url, class: "img-responsive twitter-prof-img", alt: t.user.screen_name) %>
+				<% end %>
 			</div>
 			<div class="col-xs-10">
-				<h1><%= t.user.name %> <small><%=  link_to "@#{t.user.screen_name}", "#{t.user.url}" %></small></h1>
-				<p>"<%= twitter_text(t.text) %>"</p>
+				<% if t.retweeted_status? %>
+					<h1><%= t.retweeted_status.user.name %> <small><%=  link_to "@#{t.retweeted_status.user.screen_name}", "#{t.retweeted_status.user.url}" %></small></h1>
+					<p>Retweeted: '<%= twitter_text(t.retweeted_status.text) %>'</p>
+				<% else %>
+					<h1><%= t.user.name %> <small><%=  link_to "@#{t.user.screen_name}", "#{t.user.url}" %></small></h1>
+					<p>Tweeted: '<%= twitter_text(t.text) %>'</p>
+				<% end %>
 			</div>
 		</article>
 		<% end %>
