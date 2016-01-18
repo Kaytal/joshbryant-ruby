@@ -38,6 +38,7 @@
 					<h1><%= t.user.name %> <small><%=  link_to "@#{t.user.screen_name}", "#{t.user.url}" %></small></h1>
 					<p>Tweeted: '<%= twitter_text(t.text) %>'</p>
 				<% end %>
+				<%= link_to(raw('Read on Twitter <i class="fa fa-external-link"></i>'), "#{t.url}", target: "_blank") %> 
 			</div>
 		</article>
 		<% end %>
