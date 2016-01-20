@@ -44,4 +44,4 @@ Contact
 - gem 'twitter'
 - gem 'twitter-text'
 - gem 'redcarpet'
-	- gem 'font-awesome-sass'
+- gem 'font-awesome-sass'

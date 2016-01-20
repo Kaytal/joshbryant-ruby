@@ -9,38 +9,45 @@
 <%= render "shared/mainnav" %>
 <section class="social row">
 	<h2>Social</h2>
-	<div class="instagram col-sm-12">
-		<h3>Instagram</h3>
-		<% @instagram.each do |instagram| %>
-			<div class="col-md-3 col-sm-6 col-xs-6 insta-indiv">
-				<a href="<%= instagram.link %>" target="_blank">
-					<%= image_tag instagram.images.standard_resolution.url, :class => "img-responsive" %>
-				</a>
-			</div>
-		<% end %>
-	</div>
-	<div class="twitter col-sm-12">
-		<h3>Twitter</h3>
-		<% @tweets.each do |t| %>
-		<article class="tweet well">
-			<div class="col-xs-2">
-				<% if t.retweeted_status? %>
-					<%= image_tag(t.retweeted_status.user.profile_image_url, class: "img-responsive twitter-prof-img", alt: t.retweeted_status.user.screen_name) %>
-				<% else %>
-					<%= image_tag(t.user.profile_image_url, class: "img-responsive twitter-prof-img", alt: t.user.screen_name) %>
+	<div class="row">
+		<div class="col-sm-6 instagram-row">
+			<div class="instagram col-sm-12">
+				<h3>Instagram</h3>
+				<% @instagram.each do |instagram| %>
+					<div class="col-sm-6 insta-indiv">
+						<a href="<%= instagram.link %>" target="_blank">
+							<%= image_tag instagram.images.standard_resolution.url, :class => "img-responsive" %>
+						</a>
+						<p><%= twitter_text(instagram.caption.text) %></p>
+					</div>
 				<% end %>
 			</div>
-			<div class="col-xs-10">
-				<% if t.retweeted_status? %>
-					<h1><%= t.retweeted_status.user.name %> <small><%=  link_to "@#{t.retweeted_status.user.screen_name}", "#{t.retweeted_status.user.url}" %></small></h1>
-					<p>Retweeted: '<%= twitter_text(t.retweeted_status.text) %>'</p>
-				<% else %>
-					<h1><%= t.user.name %> <small><%=  link_to "@#{t.user.screen_name}", "#{t.user.url}" %></small></h1>
-					<p>Tweeted: '<%= twitter_text(t.text) %>'</p>
+		</div>
+		<div class="col-sm-6">
+			<div class="twitter col-sm-12">
+				<h3>Twitter</h3>
+				<% @tweets.each do |t| %>
+				<article class="tweet well">
+					<div class="col-xs-2">
+						<% if t.retweeted_status? %>
+							<%= image_tag(t.retweeted_status.user.profile_image_url, class: "img-responsive twitter-prof-img", alt: t.retweeted_status.user.screen_name) %>
+						<% else %>
+							<%= image_tag(t.user.profile_image_url, class: "img-responsive twitter-prof-img", alt: t.user.screen_name) %>
+						<% end %>
+					</div>
+					<div class="col-xs-10">
+						<% if t.retweeted_status? %>
+							<h1><%= t.retweeted_status.user.name %> <small><%=  link_to "@#{t.retweeted_status.user.screen_name}", "#{t.retweeted_status.user.url}" %></small></h1>
+							<p>Retweeted: '<%= twitter_text(t.retweeted_status.text) %>'</p>
+						<% else %>
+							<h1><%= t.user.name %> <small><%=  link_to "@#{t.user.screen_name}", "#{t.user.url}" %></small></h1>
+							<p>Tweeted: '<%= twitter_text(t.text) %>'</p>
+						<% end %>
+						<%= link_to(raw('Read on Twitter <i class="fa fa-external-link"></i>'), "#{t.url}", target: "_blank") %> 
+					</div>
+				</article>
 				<% end %>
-				<%= link_to(raw('Read on Twitter <i class="fa fa-external-link"></i>'), "#{t.url}", target: "_blank") %> 
 			</div>
-		</article>
-		<% end %>
+		</div>
 	</div>
 </section>

@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-  	@instagram = Instagram.user_recent_media("219769686", {:count => 4})
+  	@instagram = Instagram.user_recent_media("219769686", {:count => 6})
 
   	client = Twitter::REST::Client.new do |config|
 		  config.consumer_key        = "Zst4O4BnnpuU5eUmvFcqFaKnA"
