@@ -1,1 +1,16 @@
-<h1>Posts</h1>
+<h1 class="text-center">Posts</h1>
+
+<div class="row">
+	<% @posts.each do |post| %>
+		<article class="col-sm-6 col-sm-offset-3 single-post">
+			<h2 class="text-center">
+				<%= post.title %>
+				<br>
+				<small><%= post.created_at.strftime('%A, %B %d') %></small>
+			</h2>
+			<div class="single-post-exerpt">
+				<%= markdown(post.content[ 0 .. 255 ]) %> <%= link_to "[Continue Reading]", post_path(:id) %>
+			</div>
+		</article>
+	<% end %>
+</div>
