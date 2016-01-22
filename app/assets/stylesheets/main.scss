@@ -104,8 +104,15 @@ nav{
 	border: 0;
 }
 
-footer {
+.footer {
 	background-color: #77A84F;
 	padding-top: 25px;
 	padding-bottom: 25px;
+}
+h1 {
+	small {
+		&.date{
+			font-size: 40%;
+		}
+	}
 }
