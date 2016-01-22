@@ -151,12 +151,16 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     pg (0.17.1)
+    posix-spawn (0.3.11)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
     puma (2.11.1)
       rack (>= 1.1, < 2.0)
+    pygments.rb (0.6.3)
+      posix-spawn (~> 0.3.6)
+      yajl-ruby (~> 1.2.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -249,6 +253,7 @@ GEM
       binding_of_caller (= 0.7.3.pre1)
       railties (~> 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    yajl-ruby (1.2.1)
 
 PLATFORMS
   ruby
@@ -268,6 +273,7 @@ DEPENDENCIES
   minitest-reporters (= 1.0.5)
   pg (= 0.17.1)
   puma (= 2.11.1)
+  pygments.rb
   rails (= 4.2.2)
   rails_12factor (= 0.0.2)
   redcarpet
