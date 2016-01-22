@@ -3,6 +3,7 @@ html, body{
 	padding: 0;
 	height: 100%;
 	width: 100%;
+	overflow-x: hidden;
 }
 body{
 	font-family: "Crimson Text", serif;
@@ -22,9 +23,12 @@ a:hover {
 main {
 	min-height: 100%;
 }
-
+.content{
+	width: 100%;
+}
 .main-header{
 	background-image: image-url(header_bkg);
+	background-size: 100%;
 	background-size: cover;
 	background-position: center top;
 	background-attachment: fixed;

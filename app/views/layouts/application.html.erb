@@ -12,19 +12,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render "shared/header" %>
 
-<%= render "shared/header" %>
+  <%= render "shared/mainnav" %>
 
-<%= render "shared/mainnav" %>
+  <main class="container">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+  	<%= yield %>
+  </main>
 
-<main class="container">
-  <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %>"><%= message %></div>
-  <% end %>
-	<%= yield %>
-</main>
-
-	<%= render "shared/footer" %>
+  	<%= render "shared/footer" %>
 
   <%= debug(params) if Rails.env.development? %>
 </body>
