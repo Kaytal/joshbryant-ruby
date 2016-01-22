@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160122185143) do
+ActiveRecord::Schema.define(version: 20160122194521) do
 
   create_table "bootsy_images", force: :cascade do |t|
     t.string   "image_file"
@@ -42,6 +42,17 @@ ActiveRecord::Schema.define(version: 20160122185143) do
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "link"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "slug"
+  end
+
+  add_index "projects", ["slug"], name: "index_projects_on_slug", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

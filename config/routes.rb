@@ -5,15 +5,13 @@ Rails.application.routes.draw do
 
   #Static Pages
   get   'contact'     => 'static_pages#contact'
-  get   'blog'        => 'static_pages#contact'
-  get   'portfolio'   => 'static_pages#contact'
+  get   'blog'        => 'posts#index'
+  get   'portfolio'   => 'projects#index'
 
-  get   'signup'  => 'users#new'
-  get   'login'   => 'sessions#new'
-  post  'login'   => 'sessions#create'
-  get   'logout'  => 'sessions#destroy'
 
   resources :posts
+
+  resources :projects
 
   #Users Resource
   resources :users
