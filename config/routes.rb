@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
   #Home Screen
   root  'static_pages#home'
 
