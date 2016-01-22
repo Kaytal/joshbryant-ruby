@@ -2,6 +2,7 @@ html, body{
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	width: 100%;
 }
 body{
 	font-family: "Crimson Text", serif;
@@ -29,6 +30,9 @@ main {
 	background-attachment: fixed;
 	width: 100%;
 	height: 350px;
+	@media (max-width: 767px){
+		background-attachment: scroll;
+	}
 	.avatar{
 		width: 200px;
 		-webkit-transform: translateX(-50%);
