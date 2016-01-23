@@ -3,7 +3,9 @@ html, body{
 	padding: 0;
 	height: 100%;
 	width: 100%;
-	overflow-x: hidden;
+	@media (max-width: 767px){
+		overflow-x: hidden;
+	}
 }
 body{
 	font-family: "Crimson Text", serif;
