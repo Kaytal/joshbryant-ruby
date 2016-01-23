@@ -26,8 +26,8 @@
 			<div class="twitter col-sm-12">
 				<h3>Twitter</h3>
 				<% @tweets.each do |t| %>
-				<article class="tweet well">
-					<div class="col-sm-2 col-xs-6 col-xs-offset-3">
+				<article class="tweet">
+					<div class="col-sm-2 col-xs-12">
 						<% if t.retweeted_status? %>
 							<%= image_tag(t.retweeted_status.user.profile_image_url, class: "img-responsive twitter-prof-img", alt: t.retweeted_status.user.screen_name) %>
 						<% else %>
