@@ -1,19 +1,23 @@
-<h1 class="text-center">Posts</h1>
-
-<div class="row">
-	<% @posts.each do |post| %>
-		<article class="col-sm-6 col-sm-offset-3 single-post">
-			<h2 class="text-center">
-				<%= post.title %>
-				<br>
-				<small><%= post.created_at.strftime('%A, %B %d') %></small>
-			</h2>
-			<div class="single-post-exerpt">
-				<%= markdown(post.content[ 0 .. 255 ]) %> <%= link_to "[Continue Reading]", post_path(post) %>
-			</div>
-		</article>
-	<% end %>
-</div>
-<div class="row">
-	<%= will_paginate @posts %>
+<div id="<%= controller.controller_name %>_<%= controller.action_name %>">
+	<h1 class="text-center">Blog Posts</h1>
+	<hr class="post-hr"/>
+	<div class="row">
+		<% @posts.each do |post| %>
+			<article class="col-sm-6 col-sm-offset-3 single-post">
+				<header>
+					<h1 class="text-center">
+						<%= link_to post.title, post_path(post) %>
+						<br>
+						<small class="date"><%= post.created_at.strftime('%A, %B %d') %></small>
+					</h1>
+				</header>
+				<div class="single-post-exerpt">
+					<%= markdown(post.content[ 0 .. 255 ]) %> <%= link_to "[Continue Reading]", post_path(post) %>
+				</div>
+			</article>
+		<% end %>
+	</div>
+	<div class="row">
+		<%= will_paginate @posts %>
+	</div>
 </div>

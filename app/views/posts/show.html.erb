@@ -4,15 +4,15 @@
 			<%= @post.title %><br />
 			<small class="date"><%= @post.created_at.strftime('%A, %B %d') %></small>
 		</h1>
-		<hr>
+		<hr class="post-hr">
 	</header>
 	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2"><%= markdown(@post.content) %></div>
+		<div class="col-sm-8 col-sm-offset-2 post"><%= markdown(@post.content) %></div>
 	</div>
 	<div classs="row">
-		<hr>
-		<div class="col-sm-8 col-sm-offset-2 text-center">
-			<p>Share</p>
+		<hr class="post-hr">
+		<div class="col-sm-8 col-sm-offset-2 text-center" id="share">
+			<h2>Share</h2>
 			<a onclick="javascript:window.open('http://twitter.com/share?text=<%= @post.title %> by @kaytal1 - &amp;url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-twitter"></i></a>
 			<a onclick="javascript:window.open('http://facebook.com/sharer.php?u=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-facebook"></i></a>
 			<a onclick="javascript:window.open('https://plus.google.com/share?url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-google-plus"></i></a>
