@@ -13,7 +13,7 @@ body{
 	overflow-y: scroll; /* has to be scroll, not auto */
   -webkit-overflow-scrolling: touch;
 }
-h1, h2, h3, h4, h5, h6, nav ul li, .btn, .alert {
+h1, h2, h3, h4, h5, h6, nav ul li,label, .btn, .alert {
 	font-family: "Lato", sans-serif;
 	text-transform: uppercase;
 }
@@ -25,9 +25,9 @@ a:hover {
 	text-decoration: none;
 }
 .btn-primary {
-	color: #77A84F;
+	background-color: #77A84F;
 	&:hover {
-		color: #598B2f;
+		background-color: #598B2f;
 	}
 }
 main {
