@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
 	before_action :find_project, only: [:show, :update, :edit, :destroy]
 	before_action :authenticate_admin!, except: [:index, :show]
+
 	def index
 		@projects = Project.all.order("created_at desc").paginate(page: params[:page], per_page: 5)
 	end
@@ -40,6 +41,6 @@ class ProjectsController < ApplicationController
 			@project = Project.friendly.find(params[:id])
 		end
 		def project_params
-			params.require(:project).permit(:title, :description, :link, :slug)
+			params.require(:project).permit(:title, :description, :link, :slug, :image, :logoimage)
 		end
 end

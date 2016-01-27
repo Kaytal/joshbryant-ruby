@@ -3,9 +3,12 @@
 <div class="row">
 	<% @projects.each do |project| %>
 		<article class="col-sm-6 col-sm-offset-3 single-project">
-			<h2 class="text-center">
-				<%= link_to project.title, project_path(:id) %>
-			</h2>
+			<header>
+				<h1 class="text-center">
+					<%= link_to project.title, project_path(project) %>
+				</h1>
+			</header>
+			<%= image_tag project.logoimage.url(:thumb), class: 'img-responsive img-center' %>
 			<div class="single-project-desc">
 				<%= project.description %>
 			</div>

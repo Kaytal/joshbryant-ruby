@@ -1,21 +1,26 @@
 <article>
-	<header>
-		<h1 class="text-center">
-			<%= @project.title %><br />
-		</h1>
-		<hr>
-	</header>
-	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2"><%= markdown(@project.description) %></div>
-	</div>
-	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2 text-center">
-			<a href="<%= @project.link %>" class="project_button" target="_blank">Visit <%= @project.title %></a>
-		</div>
-	</div>
-	<footer class="row">
-		<div class="col-sm-12">
-			<p class="text-center"><%= link_to "Edit", edit_project_path(@project), class: 'btn' %> <%= link_to "Delete", project_path(@project), method: :delete, data: {confirm: "Are you sure you want to delete this project?"}, class: 'btn' %></p>
-		</div>
-	</footer>
+  <header>
+    <h1 class="text-center">
+      <%= @project.title %><br />
+    </h1>
+    <hr>
+  </header>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2"><%= markdown(@project.description) %></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 text-center">
+      <a href="<%= @project.link %>" class="project_button" target="_blank">Visit <%= @project.title %></a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= image_tag @project.image.url, class: 'img-responsive' %>
+    </div>
+  </div>
+  <footer class="row">
+    <div class="col-sm-12">
+      <p class="text-center"><%= link_to "Edit", edit_project_path(@project), class: 'btn' %> <%= link_to "Delete", project_path(@project), method: :delete, data: {confirm: "Are you sure you want to delete this project?"}, class: 'btn' %></p>
+    </div>
+  </footer>
 </article>
