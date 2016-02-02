@@ -1,0 +1,34 @@
+<div id="<%= controller.controller_name %>_<%= controller.action_name %>">
+  <h1 class="text-center">Contact Forms</h1>
+  <hr class="post-hr"/>
+  <div class="row">
+    <% @contacts.each do |contact| %>
+      <h2><%= contact.created_at.strftime('%A, %B %d, %Y') %></h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Attribute</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td><%= contact.name %></td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td><%= contact.email %></td>
+          </tr>
+          <tr>
+            <td>Message</td>
+            <td><%= contact.message %></td>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+  <div class="row">
+    <%= will_paginate @posts %>
+  </div>
+</div>

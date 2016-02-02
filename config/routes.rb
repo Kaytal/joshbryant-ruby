@@ -5,13 +5,13 @@ Rails.application.routes.draw do
   root  'static_pages#home'
 
   #Static Pages
-  get   'contact'     => 'static_pages#contact'
+  get   'contact'     => 'contacts#new'
   get   'blog'        => 'posts#index'
   get   'portfolio'   => 'projects#index'
 
 
   resources :posts
-
+  resources :contacts
   resources :projects
 
   #Users Resource
