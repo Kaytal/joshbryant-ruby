@@ -12,25 +12,35 @@ class PostsController < ApplicationController
 	end
 	def create
 		@post = Post.new post_params
-
-		if @post.save
-			redirect_to @post, notice: "Post successfully saved and stored"
-		else
-			render 'new', notice: "Something went awry.  I was unable to save post."
+		respond_to do |format|
+			if @post.save
+				format.html { redirect_to @post, notice: "Post successfully saved and stored" }
+				format.json { render :show, status: :created, location: @post }
+			else
+				format.html { render 'new', notice: "Something went awry.  I was unable to save post." }
+				format.json { render json: @post.errors, status: :unprocessable_entity }
+			end
 		end
 	end
 	def destroy
 		@post.destroy
-		redirect_to posts_path
+		respond_to do |format|
+			format.html { redirect_to posts_path, notice: "The Post was successfully deleted!" }
+			format.json { head :no_content } 
+		end
 	end
 	def edit
 
 	end
 	def update
-		if @post.update post_params
-			redirect_to @post, notice: "Post updated!"
-		else
-			render 'edit'
+		respond_to do |format|
+			if @post.update post_params
+				format.html { redirect_to @post, notice: "Post updated!" }
+				format.json { render :show, status: :ok, location: @post }
+			else
+				format.html { render 'edit' }
+				format.json { render json: @post.errors, status: :unprocessable_entity }
+			end
 		end
 	end
 	private
