@@ -84,10 +84,23 @@ main {
 nav{
   ul{
     text-align: center;
+    @media (max-width: 767px){
+      text-align: left;
+      padding-left: 0;
+      margin-left: 0;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
     li{
       list-style-type: none;
       display: inline-block;
       padding: 25px;
+      @media (max-width: 767px){
+        display: block;
+        text-align: left;
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
     }
   }
 }
