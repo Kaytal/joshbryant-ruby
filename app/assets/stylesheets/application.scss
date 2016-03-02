@@ -23,6 +23,7 @@ html, body{
   padding: 0;
   height: 100%;
   width: 100%;
+  color: #322e2e;
   @media (max-width: 767px){
     overflow-x: hidden;
   }
@@ -37,16 +38,16 @@ h1, h2, h3, h4, h5, h6, nav ul li,label, .btn, .alert {
   text-transform: uppercase;
 }
 a {
-  color: #77A84F;
+  color: #88c46c;
 }
 a:hover {
-  color: #598B2F;
+  color: #5d8d3b;
   text-decoration: none;
 }
 .btn-primary {
-  background-color: #77A84F;
+  background-color: #88c46c;
   &:hover {
-    background-color: #598B2f;
+    background-color: #5d8d3b;
   }
 }
 .img-center{
@@ -177,17 +178,18 @@ nav{
       text-transform: uppercase;
       padding-left: 15px;
       padding-right: 15px;
+      color: #f4f5c8;
       @media(max-width: 767px){
         display: block;
         margin-top: 15px;
         margin-bottom: 15px;
       }
       a{
-        color: #333;
+        color: #f4f5c8;
         font-family: lato;
         text-transform: uppercase;
         &:hover, &:focus, &:active{
-          color: #111;
+          color: #204c00;
         }
       }
     }
@@ -203,8 +205,7 @@ nav{
   }
 }
 .post-hr{
-  border-top: 2px solid #598B2F;
-  opacity: .3;
+  border-top: 2px solid #88c46c;
 }
 //Blog Post Styling
 #posts_index{
@@ -216,10 +217,10 @@ nav{
       font-size: 1.85em;
       font-weight: 600;
       a{
-        color: #000;
+        color: #322e2e;
         text-decoration: underline;
         &:hover, &:focus, &:active{
-          color: #000;
+          color: #322e2e;
           text-decoration: none;
         }
       }
@@ -231,7 +232,7 @@ nav{
     }
     h1,h2,h3,h4,h5{
       font-weight: 500;
-      color: #555;
+      color: #322e2e;
     }
     h1{
       font-size: 1.75em;
